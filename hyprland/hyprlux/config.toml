@@ -1,8 +1,0 @@
-#night_light = { enabled = true, start_time = "08:00", end_time = "20:30", temperature = 3500 }
-night_light = { enabled = true, latitude = 50.85046, longitude = 4.34878, temperature = 3500 }
-
-vibrance_configs = [
-  { window_class = "SDL Application", window_title = "", strength = 100 },
-]
-
-hot_reload = true
