@@ -18,8 +18,8 @@ sudo systemctl enable sddm
 
 # setup theme
 sudo mkdir -p /usr/share/sddm/themes
-sudo cp $SCRIPT_PATH/sddm/sddm.conf /etc
-sudo cp -r $SCRIPT_PATH/sddm/sugar-candy /usr/share/sddm/themes
+sudo cp $SCRIPT_PATH/others/sddm/sddm.conf /etc
+sudo cp -r $SCRIPT_PATH/others/sddm/sugar-candy /usr/share/sddm/themes
 
 # CHANGE SCREENwidth:height WITH THE SIZE SCREEN TO FIT BETTER (1920x1080)
 # IN theme.conf
@@ -29,29 +29,29 @@ if ! [ -d $HOME/.config ]; then
 fi
 
 echo "Installing configs/themes..."
-cp -r $SCRIPT_PATH/.config $HOME
+cp -r $SCRIPT_PATH/i3/.config $HOME
 
 # Install font
 echo "Installing font..."
 
 sudo mkdir -p /usr/share/fonts/TTF/
-sudo cp -r $SCRIPT_PATH/fonts/Caskaydia /usr/share/fonts/TTF/
+sudo cp -r $SCRIPT_PATH/others/fonts/Caskaydia /usr/share/fonts/TTF/
 fc-cache
 
 echo "Installing rofi..."
 mkdir -p $HOME/.local/share/rofi
-cp -r $SCRIPT_PATH/rofi/themes $HOME/.local/share/rofi
+cp -r $SCRIPT_PATH/others/rofi/themes $HOME/.local/share/rofi
 
 echo "Installing picom..."
 sudo mkdir -p /usr/share/backgrounds/
-sudo cp $SCRIPT_PATH/picom.conf /etc/xdg/picom.conf
+sudo cp $SCRIPT_PATH/others/picom.conf /etc/xdg/picom.conf
 
 # Install oh-my-zsh
 echo "Installing omz..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp $SCRIPT_PATH/zsh_config/.zshrc $HOME
-cp $SCRIPT_PATH/zsh_config/.bash_aliases $HOME
-cp $SCRIPT_PATH/zsh_config/okiban-nosobi.zsh-theme $HOME/.oh-my-zsh/themes
+cp $SCRIPT_PATH/others/zsh_config/.zshrc $HOME
+cp $SCRIPT_PATH/others/zsh_config/.bash_aliases $HOME
+cp $SCRIPT_PATH/others/zsh_config/okiban-nosobi.zsh-theme $HOME/.oh-my-zsh/themes
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
