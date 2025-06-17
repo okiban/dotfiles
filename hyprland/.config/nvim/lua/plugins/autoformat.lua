@@ -33,6 +33,9 @@ return {
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
+      markdown = { 'markdownlint' },
     },
   },
 }
+
+-- vim : ts=2 sts=2 sw=2 et
