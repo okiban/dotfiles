@@ -32,8 +32,15 @@ return {
       end
     end,
     formatters_by_ft = {
+      bash = { 'shfmt' },
       lua = { 'stylua' },
       markdown = { 'markdownlint' },
+      json = { 'biome' },
+      jsonc = { 'biome' },
+      javascript = { 'biome' },
+      javascriptreact = { 'biome' },
+      typescript = { 'biome' },
+      typescriptreact = { 'biome' },
     },
   },
 }
