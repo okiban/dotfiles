@@ -7,7 +7,6 @@ mkdir -p "$DEST_DIR"
 
 for dir in $CONFIG_DIR/*; do
     base_dir="$(basename "$dir")"
-    echo $(basename "$dir")
 
     # skip if the directory is the destination itself
     if [[ "$CONFIG_DIR/$base_dir" == "$DEST_DIR" ]]; then
