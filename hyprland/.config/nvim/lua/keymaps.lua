@@ -26,3 +26,14 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', {
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {
   desc = 'Move focus to the upper window',
 })
+
+--
+-- Mappings fzf
+--
+vim.keymap.set('n', '<leader><leader>', function()
+  require('fzf-lua').files()
+end, { desc = 'Search for files' })
+
+vim.keymap.set('n', '<C-l>', function()
+  require('fzf-lua').live_grep()
+end, { desc = 'Search in files' })
