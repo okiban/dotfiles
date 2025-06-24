@@ -6,7 +6,12 @@ return {
     }
 
     require('mini.surround').setup()
-    require('mini.comment').setup()
+    require('mini.comment').setup {
+      mappings = {
+        comment_line = '<C-q>',
+        comment_visual = '<C-q>',
+      },
+    }
 
     local statusline = require 'mini.statusline'
     statusline.setup {
