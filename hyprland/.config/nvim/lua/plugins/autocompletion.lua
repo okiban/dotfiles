@@ -32,6 +32,9 @@ return {
   opts = {
     keymap = {
       preset = 'default',
+      ['<C-k>'] = { 'select_prev', 'fallback' },
+      ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<CR>'] = { 'select_and_accept', 'fallback' },
     },
 
     appearance = {
@@ -45,7 +48,7 @@ return {
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
       documentation = {
         auto_show = true,
-        auto_show_delay_ms = 500,
+        auto_show_delay_ms = 10,
       },
     },
 
