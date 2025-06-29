@@ -7,6 +7,20 @@ return {
   end,
   config = function()
     require('onedarkpro.config').set_theme 'onedark_dark'
+    require('onedarkpro').setup {
+      style = {
+        functions = 'italic',
+        methods = 'italic',
+        keywords = 'bold,italic',
+        types = 'bold',
+      },
+    }
     require('onedarkpro').load()
+    -- [[ Post init configurations ]]
+    -- line cursor color
+    vim.api.nvim_set_hl(0, 'CursorLineNr', {
+      fg = '#ff9e64',
+      bold = true,
+    })
   end,
 }
