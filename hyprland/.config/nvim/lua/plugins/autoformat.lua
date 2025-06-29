@@ -41,6 +41,9 @@ return {
       javascriptreact = { 'biome' },
       typescript = { 'biome' },
       typescriptreact = { 'biome' },
+      css = { 'biome' },
+      scss = { 'biome' },
+      sass = { 'biome' },
     },
   },
 }
