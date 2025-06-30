@@ -1,7 +1,6 @@
 indication de la current line
 indication visual line
 indication yank
-couleur  curseur (ROUGE)
 indication recherche line
 toggle terminal alt A 
 line scope indicateur (le truc collaopse en haut de la ligne)
