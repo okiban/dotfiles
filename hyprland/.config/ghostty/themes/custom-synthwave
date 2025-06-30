@@ -18,7 +18,12 @@ palette = 15=#ffffff
 background = 000000
 foreground = dad9c7
 
-cursor-color = 19cde6
+# shell-integration-features = no-cursor must be set to no-cursor to avoid having the bar from the shell integration
+cursor-style = block
+shell-integration-features = no-cursor
+
+# cyan style = 19cde6
+cursor-color = #ff0000
 
 selection-foreground = 000000
 selection-background = fffacd

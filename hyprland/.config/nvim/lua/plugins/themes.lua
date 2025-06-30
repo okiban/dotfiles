@@ -17,6 +17,10 @@ return {
     }
     require('onedarkpro').load()
     -- [[ Post init configurations ]]
+    -- cursor color
+    vim.api.nvim_set_hl(0, 'Cursor', {
+      fg = '#ff0000',
+    })
     -- line cursor color
     vim.api.nvim_set_hl(0, 'CursorLineNr', {
       fg = '#ff9e64',

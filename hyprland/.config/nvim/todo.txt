@@ -1,0 +1,10 @@
+indication de la current line
+indication visual line
+indication yank
+couleur  curseur (ROUGE)
+indication recherche line
+toggle terminal alt A 
+line scope indicateur (le truc collaopse en haut de la ligne)
+indent color au lieu des couleurs sur la ligne de l'indentation
+ctlr return => delete back
+custom start up page
