@@ -50,5 +50,5 @@ vim.keymap.set('i', '<C-Backspace>', '<Esc>dbi') -- the good old ctrl backspace 
 
 vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
 vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
-vim.keymap.set('n', '<M-w>', '<cmd>:w<cr><cmd>bdelete<cr>')
-vim.keymap.set('n', '<C-t>', '<cmd>BuggerLine<cr>')
+vim.keymap.set('n', '<M-w>', '<cmd>bdelete<cr>')
+vim.keymap.set('n', '<C-t>', '<cmd>tabnew<cr>')
