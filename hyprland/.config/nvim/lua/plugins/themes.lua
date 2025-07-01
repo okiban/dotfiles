@@ -8,6 +8,7 @@ return {
   config = function()
     require('onedarkpro.config').set_theme 'onedark_dark'
     require('onedarkpro').setup {
+      -- For more details : https://github.com/olimorris/onedarkpro.nvim/blob/main/lua/onedarkpro/highlights/editor.lua
       highlights = {
         CursorLineNr = { fg = '#ff9e64', bg = '#2C313C', bold = true },
         CursorLine = { bg = '#2C313C' },
