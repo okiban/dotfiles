@@ -1,5 +1,6 @@
 -- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<C-C>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {
@@ -38,8 +39,16 @@ vim.keymap.set('n', '<C-S-l>', function()
   require('fzf-lua').live_grep()
 end, { desc = 'Search in files' })
 
+vim.keymap.set('i', '<C-S-l>', function()
+  require('fzf-lua').live_grep()
+end, { desc = 'Search in files' })
 ---
 --- Customs
 ---
 vim.keymap.set('n', '<C-Backspace>', 'db') -- the good old ctrl backspace to get ride of a word
 vim.keymap.set('i', '<C-Backspace>', '<Esc>dbi') -- the good old ctrl backspace to get ride of a word
+
+vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
+vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
+vim.keymap.set('n', '<M-w>', '<cmd>:w<cr><cmd>bdelete<cr>')
+vim.keymap.set('n', '<C-t>', '<cmd>BuggerLine<cr>')
