@@ -34,7 +34,7 @@ vim.keymap.set('n', '<leader><leader>', function()
   require('fzf-lua').files()
 end, { desc = 'Search for files' })
 
-vim.keymap.set('n', '<leader><C-l>', function()
+vim.keymap.set('n', '<C-S-l>', function()
   require('fzf-lua').live_grep()
 end, { desc = 'Search in files' })
 
