@@ -1,6 +1,6 @@
-indication de la current line
 indication visual line
-indication yank
+indication yank vertj
 indication recherche line
 toggle terminal alt A 
 line scope indicateur (le truc collaopse en haut de la ligne)
+

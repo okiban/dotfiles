@@ -8,6 +8,11 @@ return {
   config = function()
     require('onedarkpro.config').set_theme 'onedark_dark'
     require('onedarkpro').setup {
+      highlights = {
+        CursorLineNr = { fg = '#ff9e64', bg = '#2C313C', bold = true },
+        CursorLine = { bg = '#2C313C' },
+        YankHighlight = { bg = '#ADD8E6', fg = '#0000FF' },
+      },
       style = {
         functions = 'italic',
         methods = 'italic',
@@ -16,11 +21,5 @@ return {
       },
     }
     require('onedarkpro').load()
-    -- [[ Post init configurations ]]
-    -- line cursor color
-    vim.api.nvim_set_hl(0, 'CursorLineNr', {
-      fg = '#ff9e64',
-      bold = true,
-    })
   end,
 }
