@@ -11,7 +11,18 @@ return {
           lsp_format = 'fallback',
         }
       end,
-      mode = '',
+      mode = { 'n', 'v' },
+      desc = '[F]ormat buffer',
+    },
+    {
+      '<C-S-f>',
+      function()
+        require('conform').format {
+          async = true,
+          lsp_format = 'fallback',
+        }
+      end,
+      mode = { 'n', 'v' },
       desc = '[F]ormat buffer',
     },
   },
