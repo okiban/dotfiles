@@ -1,1 +1,1 @@
-line scope indicateur (le truc collaopse en haut de la ligne)
+LSP
