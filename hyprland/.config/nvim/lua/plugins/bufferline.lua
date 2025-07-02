@@ -8,6 +8,13 @@ return {
 
   opts = {
     options = {
+      mode = 'tabs',
+      themable = true,
+      numbers = 'none',
+      buffer_close_icon = '',
+      close_icon = '',
+      section_separators = '',
+      component_separators = '',
       diagnostics = 'nvim_lsp',
       diagnostics_indicator = function(count, level, diagnostics_dict, context)
         local s = ' '
