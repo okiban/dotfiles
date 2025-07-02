@@ -46,7 +46,7 @@ end, { desc = 'Search in files' })
 --- Customs
 ---
 vim.keymap.set('n', '<C-Backspace>', 'db') -- the good old ctrl backspace to get ride of a word
-vim.keymap.set('i', '<C-Backspace>', '<Esc>dbi') -- the good old ctrl backspace to get ride of a word
+vim.keymap.set('i', '<C-Backspace>', '<Esc>dbxi') -- the good old ctrl backspace to get ride of a word
 
 vim.keymap.set('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>')
 vim.keymap.set('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>')
