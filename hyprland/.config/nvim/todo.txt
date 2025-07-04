@@ -1,1 +1,4 @@
 LSP
+Ansible
+Status bar
+smoothscroll
