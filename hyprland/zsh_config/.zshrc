@@ -34,19 +34,39 @@ export KUBE_EDITOR="nvim"
 export ANDROID_HOME="$HOME/Android/sdk"
 
 # Deduplicated and ordered PATH additions
-export PATH="$HOME/.cargo/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/go/bin:$ANDROID_HOME/emulator:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/go/bin:$ANDROID_HOME/emulator::$HOME/bin:/lib/qt6/bin"
 
 # ─────────────────────────────────────────────
 # Plugins and Completions
 # ─────────────────────────────────────────────
 # 'thefuck' alias
-eval "$(thefuck --alias)"
+if command -v thefuck &> /dev/null; then
+    eval "$(thefuck --alias)"
+fi
+
+[ -f "$HOME/.zsh_autocomplete" ] && source "$HOME/.zsh_autocomplete"
+# nvm init
+[[ -s "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # pipx autocomplete
-[ -f "$HOME/.zsh_autocomplete" ] && source "$HOME/.zsh_autocomplete"
-eval "$(register-python-argcomplete pipx)"
+if command -v pipx &> /dev/null && command -v register-python-argcomplete &> /dev/null; then
+    eval "$(register-python-argcomplete pipx)"
+fi
 
-# starship
+# zoxide init
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
 
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-eval "$(starship init zsh)"
+# starship init
+if command -v starship &> /dev/null; then
+    # Set config path if the file exists, otherwise let starship use defaults
+    if [[ -f "$HOME/.config/starship/starship.toml" ]]; then
+        export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+    fi
+    eval "$(starship init zsh)"
+fi
