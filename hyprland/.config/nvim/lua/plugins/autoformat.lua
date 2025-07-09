@@ -55,6 +55,10 @@ return {
       css = { 'biome' },
       scss = { 'biome' },
       sass = { 'biome' },
+      terraform = { 'terraform_fmt' },
+      python = { 'black' },
+      toml = { 'toplo' },
+      yaml = { 'yamlfmt' },
     },
   },
 }

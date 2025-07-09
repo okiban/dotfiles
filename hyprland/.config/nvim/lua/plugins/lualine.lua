@@ -11,15 +11,10 @@ return {
       sections = {
         lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
         lualine_b = { 'filename', 'branch' },
-        lualine_c = {
-          'diff',
-          'diagnostics',
-        },
+        lualine_c = { 'diff', 'diagnostics' },
         lualine_x = { 'encoding', 'fileformat' },
         lualine_y = { 'filetype', 'progress' },
-        lualine_z = {
-          { 'location', separator = { right = '' }, left_padding = 2 },
-        },
+        lualine_z = { { 'location', separator = { right = '' }, left_padding = 2 } },
       },
       inactive_sections = {
         lualine_a = { 'filename' },
