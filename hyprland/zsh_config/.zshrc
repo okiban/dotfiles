@@ -2,10 +2,30 @@
 # Oh My Zsh Setup
 # ─────────────────────────────────────────────
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source "$ZSH/oh-my-zsh.sh"
 
+# ─────────────────────────────────────────────
+# Environment Variables
+# ─────────────────────────────────────────────
+export EDITOR="nvim"
+export KUBE_EDITOR="nvim"
+
+export ANDROID_HOME="$HOME/Android/sdk"
+
+# Optimize PATH building
+typeset -U path  # Remove duplicates automatically
+path=(
+    $HOME/.cargo/bin
+    $HOME/.local/bin
+    ${KREW_ROOT:-$HOME/.krew}/bin
+    $HOME/go/bin
+    $ANDROID_HOME/emulator
+    $HOME/bin
+    /lib/qt6/bin
+    $path
+)
 # ─────────────────────────────────────────────
 # Custom Functions
 # ─────────────────────────────────────────────
@@ -26,41 +46,18 @@ function y() {
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 # ─────────────────────────────────────────────
-# Environment Variables
-# ─────────────────────────────────────────────
-export EDITOR="nvim"
-export KUBE_EDITOR="nvim"
-
-export ANDROID_HOME="$HOME/Android/sdk"
-
-# Deduplicated and ordered PATH additions
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin:$HOME/go/bin:$ANDROID_HOME/emulator::$HOME/bin:/lib/qt6/bin"
-
-# ─────────────────────────────────────────────
 # Plugins and Completions
 # ─────────────────────────────────────────────
-# 'thefuck' alias
-if command -v thefuck &> /dev/null; then
-    eval "$(thefuck --alias)"
-fi
 
 [ -f "$HOME/.zsh_autocomplete" ] && source "$HOME/.zsh_autocomplete"
+
+
 # nvm init
 [[ -s "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
 
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# pipx autocomplete
-if command -v pipx &> /dev/null && command -v register-python-argcomplete &> /dev/null; then
-    eval "$(register-python-argcomplete pipx)"
-fi
-
-# zoxide init
-if command -v zoxide &> /dev/null; then
-    eval "$(zoxide init zsh)"
-fi
 
 # starship init
 if command -v starship &> /dev/null; then
@@ -70,3 +67,23 @@ if command -v starship &> /dev/null; then
     fi
     eval "$(starship init zsh)"
 fi
+
+
+# ─────────────────────────────────────────────
+# Deferred Loading (Background)
+# ─────────────────────────────────────────────
+# Load these after shell is ready
+{
+    # pipx autocomplete
+    if command -v pipx &> /dev/null && command -v register-python-argcomplete &> /dev/null; then
+        eval "$(register-python-argcomplete pipx)"
+    fi
+
+    # zoxide init
+    if command -v zoxide &> /dev/null; then
+        eval "$(zoxide init zsh)"
+    fi
+
+} &!
+
+alias TEST="echo couou"

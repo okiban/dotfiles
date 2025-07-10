@@ -24,7 +24,7 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.list = true
 
-vim.o.shell = '/bin/zsh -i'
+vim.o.shell = '/bin/zsh'
 
 vim.opt.listchars = {
   tab = '» ',
