@@ -67,10 +67,6 @@ function y() {
 
 [ -f "$HOME/.zsh_autocomplete" ] && source "$HOME/.zsh_autocomplete"
 
-
-# nvm init
-[[ -s "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
-
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
