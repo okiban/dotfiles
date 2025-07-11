@@ -1,10 +1,26 @@
 # ─────────────────────────────────────────────
+# Performance Optimizations
+# ─────────────────────────────────────────────
+# Skip global compinit - we'll handle it manually
+skip_global_compinit=1
+
+# ─────────────────────────────────────────────
 # Oh My Zsh Setup
 # ─────────────────────────────────────────────
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(zsh-autosuggestions zsh-syntax-highlighting fzf)
 
 source "$ZSH/oh-my-zsh.sh"
+
+# ─────────────────────────────────────────────
+# Optimized Completions
+# ─────────────────────────────────────────────
+# Only run compinit once per day for better performance
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+    compinit -d ~/.zcompdump
+done
+[[ -f ~/.zcompdump ]] && compinit -C -d ~/.zcompdump
 
 # ─────────────────────────────────────────────
 # Environment Variables
