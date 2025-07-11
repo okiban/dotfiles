@@ -101,5 +101,3 @@ fi
     fi
 
 } &!
-
-alias TEST="echo couou"
