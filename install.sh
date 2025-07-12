@@ -2,27 +2,27 @@
 
 set -e
 
-echo "🚀 Installing okiban dotfiles..."
+echo "Installing okiban dotfiles..."
 
 # Check if we're on Arch Linux
 if ! command -v pacman &> /dev/null; then
-    echo "❌ This script is designed for Arch Linux"
+    echo "This script is designed for Arch Linux"
     exit 1
 fi
 
 # Update the system
-echo "📦 Updating system..."
+echo "Updating system..."
 sudo pacman -Syu --noconfirm
 
 # =============================================================================
 # PACKAGE INSTALLATION
 # =============================================================================
 
-echo "📥 Installing packages..."
+echo "Installing packages..."
 
 # Check if yay is installed, install it if not
 if ! command -v yay &> /dev/null; then
-    echo "🔧 Installing yay..."
+    echo "Installing yay..."
     sudo pacman -S --needed --noconfirm base-devel git
     git clone https://aur.archlinux.org/yay.git /tmp/yay
     cd /tmp/yay
@@ -31,7 +31,7 @@ if ! command -v yay &> /dev/null; then
 fi
 
 # Remove unwanted packages
-echo "🗑️ Removing unwanted packages..."
+echo "Removing unwanted packages..."
 UNWANTED_PACKAGES=(
     "dolphin"
     "kitty"
@@ -42,18 +42,22 @@ UNWANTED_PACKAGES=(
 for pkg in "${UNWANTED_PACKAGES[@]}"; do
     if pacman -Qi "$pkg" &> /dev/null; then
         echo "Removing $pkg..."
-        yay -R --noconfirm "$pkg" || echo "⚠️ Unable to remove $pkg"
+        yay -R --noconfirm "$pkg" || echo "Unable to remove $pkg"
     else
-        echo "📝 $pkg is not installed"
+        echo "$pkg is not installed"
     fi
 done
 
-# Install official packages
-echo "📥 Installing official packages..."
-OFFICIAL_PACKAGES=(
+# Install packages
+echo "Installing packages..."
+PACKAGES=(
     "bat"
+    "bitwarden"
+    "bluetui"
+    "bluetuith"
     "bluez"
     "bluez-utils"
+    "brave-bin"
     "breeze-icons"
     "btop"
     "chafa"
@@ -63,12 +67,19 @@ OFFICIAL_PACKAGES=(
     "ghostscript"
     "gimp"
     "gnome-calculator"
+    "gpu-usage-waybar"
     "graphicsmagick"
+    "grimshot-bin-sway"
     "gthumb"
     "gvfs-smb"
+    "heroic-games-launcher-bin"
     "hypridle"
+    "hyprlux"
+    "hyprpolkitagent"
     "imagemagick"
+    "lazygit"
     "libreoffice-still"
+    "lsb-release"
     "lxappearance"
     "neovim"
     "noto-fonts"
@@ -76,13 +87,25 @@ OFFICIAL_PACKAGES=(
     "noto-fonts-emoji"
     "noto-fonts-extra"
     "nvtop"
+    "nwg-displays"
     "nwg-look"
+    "oh-my-zsh"
+    "openrazer"
+    "otf-apple-sf-pro"
+    "pacseek"
     "pavucontrol"
     "procs"
     "ripgrep"
     "smbclient"
     "starship"
+    "swaync"
+    "tectonic"
     "tldr"
+    "ttf-jetbrains-mono-nerd"
+    "ttf-nerd-fonts-symbols"
+    "ttf-nerd-fonts-symbols-common"
+    "ueberzugpp"
+    "viu"
     "vlc"
     "xcursor-breeze"
     "zenity"
@@ -90,50 +113,20 @@ OFFICIAL_PACKAGES=(
     "zsh"
 )
 
-sudo pacman -S --needed --noconfirm "${OFFICIAL_PACKAGES[@]}"
-
-# Install AUR packages
-echo "📥 Installing AUR packages..."
-AUR_PACKAGES=(
-    "bitwarden"
-    "bluetui"
-    "bluetuith"
-    "brave-bin"
-    "gpu-usage-waybar"
-    "grimshot-bin-sway"
-    "heroic-games-launcher-bin"
-    "hyprlux"
-    "hyprpolkitagent"
-    "lazygit"
-    "lsb-release"
-    "nwg-displays"
-    "oh-my-zsh"
-    "openrazer"
-    "otf-apple-sf-pro"
-    "pacseek"
-    "swaync"
-    "tectonic"
-    "ttf-jetbrains-mono-nerd"
-    "ttf-nerd-fonts-symbols"
-    "ttf-nerd-fonts-symbols-common"
-    "ueberzugpp"
-    "viu"
-)
-
-yay -S --needed --noconfirm "${AUR_PACKAGES[@]}"
+yay -S --needed --noconfirm "${PACKAGES[@]}"
 
 # =============================================================================
 # DOTFILES CONFIGURATION
 # =============================================================================
 
-echo "⚙️ Configuring dotfiles..."
+echo "Configuring dotfiles..."
 
 # Execute your existing configuration script
 if [ -f "hyprland/do-symbolic-links.sh" ]; then
-    echo "🔧 Running your symbolic links script..."
+    echo "Running your symbolic links script..."
     cd hyprland && ./do-symbolic-links.sh --force && cd -
 else
-    echo "❌ Script hyprland/do-symbolic-links.sh not found"
+    echo "Script hyprland/do-symbolic-links.sh not found"
     exit 1
 fi
 
@@ -141,11 +134,11 @@ fi
 # POST-INSTALLATION
 # =============================================================================
 
-echo "🎉 Post-installation configuration..."
+echo "Post-installation configuration..."
 
 # Install oh-my-zsh plugins
 if [ -d "$HOME/.oh-my-zsh" ]; then
-    echo "📥 Installing oh-my-zsh plugins..."
+    echo "Installing oh-my-zsh plugins..."
  
     # zsh-autosuggestions
     if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]; then
@@ -157,15 +150,15 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
     fi
 else
-    echo "⚠️ oh-my-zsh is not installed, skipping plugins"
+    echo "oh-my-zsh is not installed, skipping plugins"
 fi
 
 # Add user to plugdev group (for OpenRazer)
-echo "👤 Adding $USER to plugdev group..."
+echo "Adding $USER to plugdev group..."
 sudo usermod -aG plugdev "$USER"
 
 # Enable services
-echo "🔧 Enabling services..."
+echo "Enabling services..."
 SERVICES=(
     "bluetooth"
     "cups"
