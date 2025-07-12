@@ -166,6 +166,11 @@ sudo usermod -aG plugdev "$USER"
 
 # Enable services
 echo "🔧 Enabling services..."
-sudo systemctl enable bluetooth cups openrazer-daemon
+SERVICES=(
+    "bluetooth"
+    "cups"
+    "networkmanager"
+)
+sudo systemctl enable "${SERVICES[@]}"
 
 reboot
