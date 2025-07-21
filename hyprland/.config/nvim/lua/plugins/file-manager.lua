@@ -10,7 +10,51 @@ return {
     end,
   },
   {
+    'nvim-neo-tree/neo-tree.nvim',
+    enabled = true,
+    branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+      'folke/snacks.nvim',
+    },
+    lazy = false, -- neo-tree will lazily load itself
+    keys = {
+      { '\\', '<Cmd>Neotree toggle reveal position=float<CR>', desc = 'Toggle Neotree' },
+    },
+    ---@module "neo-tree"
+    ---@type neotree.Config?
+    config = function()
+      require('neo-tree').setup {
+        filesystem = {
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_hidden = false,
+            hide_gitignored = false,
+          },
+        },
+        window = {
+          width = 40,
+          mappings = {
+            ['l'] = 'toggle_node',
+            ['h'] = 'toggle_node',
+            ['P'] = {
+              'toggle_preview',
+              config = {
+                use_float = true,
+                use_snacks_image = true,
+                use_image_nvim = true,
+              },
+            },
+          },
+        },
+      }
+    end,
+  },
+  {
     'mikavilpas/yazi.nvim',
+    enabled = false,
     event = 'VeryLazy',
     dependencies = {
       'folke/snacks.nvim',
