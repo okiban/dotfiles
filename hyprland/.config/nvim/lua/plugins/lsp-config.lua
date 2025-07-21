@@ -83,7 +83,15 @@ return {
           --  For example, in C this would take you to the header.
           map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-          -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
+          map('grr', function()
+            require('fzf-lua').lsp_references()
+          end, '[G]oto [R]eferences')
+
+          map('gri', function()
+            require('fzf-lua').lsp_implementations()
+          end, '[G]oto [I]mplementation')
+
+          -- This function resolves a difference between neovim ghtly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
           ---@param bufnr? integer some lsp support methods only in specific files
