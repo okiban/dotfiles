@@ -37,14 +37,15 @@ return {
         window = {
           width = 40,
           mappings = {
+            ['L'] = 'focus_preview',
             ['l'] = 'toggle_node',
             ['h'] = 'toggle_node',
+            ['<C-C>'] = 'cancel',
             ['P'] = {
               'toggle_preview',
               config = {
                 use_float = true,
                 use_snacks_image = true,
-                use_image_nvim = true,
               },
             },
           },
