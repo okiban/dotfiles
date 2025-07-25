@@ -37,6 +37,8 @@ path=(
     $HOME/.local/bin
     ${KREW_ROOT:-$HOME/.krew}/bin
     $HOME/go/bin
+    $ANDROID_HOME/cmdline-tools/latest/bin
+    $ANDROID_HOME/platform-tools
     $ANDROID_HOME/emulator
     $HOME/bin
     /lib/qt6/bin
