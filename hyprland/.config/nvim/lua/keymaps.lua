@@ -1,4 +1,4 @@
-j- [[ Basic Keymaps ]]
+-- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<C-C>', '<cmd>nohlsearch<CR>')
 
