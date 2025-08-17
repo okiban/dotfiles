@@ -18,7 +18,7 @@
 	"modules-center": ["hyprland/workspaces"],
 	"modules-right": [
 		"custom/gpu-usage",
-		"custom/notification",
+		// "custom/notification",
 		"mpd",
 		"pulseaudio",
 		"power-profiles-daemon",
@@ -100,7 +100,7 @@
 	},
 	"battery": {
 		"states": {
-			// "good": 95,
+			"good": 95,
 			"warning": 30,
 			"critical": 15
 		},

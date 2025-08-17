@@ -43,6 +43,7 @@ path=(
     $HOME/bin
     /lib/qt6/bin
     $path
+    $HOME/.config/emacs/bin
 )
 # ─────────────────────────────────────────────
 # Custom Functions
