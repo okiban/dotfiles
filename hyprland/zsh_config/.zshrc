@@ -44,6 +44,7 @@ path=(
     /lib/qt6/bin
     $path
     $HOME/.config/emacs/bin
+    $HOME/.bun/bin
 )
 # ─────────────────────────────────────────────
 # Custom Functions
