@@ -66,3 +66,8 @@ If not first run AND editing the PlayStore/dataPartition => run emulator with th
 ```bash
 emulator -avd pixel9-emulator
 ```
+
+## Install desktop entry
+
+- copy .desktop into .local/share/application
+- copy svg into  .local/share/icons
