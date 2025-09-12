@@ -158,6 +158,7 @@ yay -S --needed --noconfirm "${PACKAGES[@]}"
 # ANDROID SDK 
 # =============================================================================
 mkdir -p $HOME/Android/sdk/cmdline-tools
+cd $HOME/Android/sdk
 wget https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
 unzip commandlinetools-linux-13114758_latest.zip
 mkdir -p cmdline-tools/latest
