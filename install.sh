@@ -52,8 +52,7 @@ done
 echo "Installing packages..."
 PACKAGES=(
     "7zip"
-    "android-sdk"
-    "android-sdk-cmdline-tools-latest"
+    "android-tools"
     "bat"
     "bitwarden"
     "bluetui"
@@ -154,6 +153,16 @@ PACKAGES=(
 )
 
 yay -S --needed --noconfirm "${PACKAGES[@]}"
+
+# =============================================================================
+# ANDROID SDK 
+# =============================================================================
+mkdir -p $HOME/Android/sdk/cmdline-tools
+wget https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
+unzip commandlinetools-linux-13114758_latest.zip
+mkdir -p cmdline-tools/latest
+mv cmdline-tools/* cmdline-tools/latest/ 2>/dev/null || true
+rm commandlinetools-linux-13114758_latest.zip
 
 # Install oh-my-zsh
 echo "Installing oh-my-zsh"
