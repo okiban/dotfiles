@@ -71,7 +71,6 @@ PACKAGES=(
     "dysk"
     "fastfetch"
     "fd"
-    "freeze"
     "freeze-bin" 
     "fzf"
     "ghostscript"
