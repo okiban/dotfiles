@@ -69,11 +69,13 @@ PACKAGES=(
     "dunst"
     "dust"
     "dysk"
+    "emacs-wayland"
     "fastfetch"
     "fd"
     "freeze-bin" 
     "fzf"
     "ghostscript"
+    "ghostty"
     "gimp"
     "gnome-calculator"
     "gnome-calendar"
@@ -123,14 +125,13 @@ PACKAGES=(
     "python-pipx"
     "rate-mirrors-bin"
     "ripgrep"
-    "rofi-warland"
+    "rofi-wayland"
     "rust"
     "scrcpy"
     "simple-scan"
     "slides"
     "smbclient"
     "starship"
-    "swaync"
     "tectonic"
     "tldr"
     "ttf-jetbrains-mono-nerd"
@@ -142,6 +143,7 @@ PACKAGES=(
     "viu"
     "vlc"
     "vlc-plugins-all"
+    "waybar"
     "wf-recorder-gui"
     "whitesur-gtk-theme"
     "xcursor-breeze"
@@ -176,7 +178,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Configuring dotfiles..."
 
 # Execute your existing configuration script
-if [ -f "hyprland/do-symbolic-links.sh" ]; then
+if [ -f "$HOME/dotfiles/hyprland/do-symbolic-links.sh" ]; then
     echo "Running your symbolic links script..."
     cd hyprland && ./do-symbolic-links.sh --force && cd -
 else
@@ -207,6 +209,9 @@ else
     echo "oh-my-zsh is not installed, skipping plugins"
 fi
 
+# Change shell
+sudo chsh -s /usr/bin/zsh
+
 # Add user to plugdev group (for OpenRazer)
 echo "Adding $USER to plugdev group..."
 sudo usermod -aG plugdev "$USER"
@@ -216,7 +221,7 @@ echo "Enabling services..."
 SERVICES=(
     "bluetooth"
     "cups"
-    "networkmanager"
+    "NetworkManager"
 )
 sudo systemctl enable "${SERVICES[@]}"
 
