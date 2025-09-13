@@ -135,6 +135,7 @@ PACKAGES=(
     "ttf-jetbrains-mono-nerd"
     "ttf-nerd-fonts-symbols"
     "ttf-nerd-fonts-symbols-common"
+    "gnome-calendar"
     "ueberzugpp"
     "unzip"
     "v4l2loopback-dkms"
