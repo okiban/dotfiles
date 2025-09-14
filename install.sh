@@ -190,7 +190,6 @@ if [ -f "$SCRIPT_DIR/hyprland/do-symbolic-links.sh" ]; then
     cd hyprland && ./do-symbolic-links.sh --force && cd -
 else
     echo "Script hyprland/do-symbolic-links.sh not found"
-    exit 1
 fi
 
 # =============================================================================
