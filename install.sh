@@ -4,6 +4,8 @@ set -e
 
 echo "Installing okiban dotfiles..."
 
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+
 # Check if we're on Arch Linux
 if ! command -v pacman &> /dev/null; then
     echo "This script is designed for Arch Linux"
@@ -181,7 +183,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Configuring dotfiles..."
 
 # Execute your existing configuration script
-if [ -f "$HOME/dotfiles/hyprland/do-symbolic-links.sh" ]; then
+if [ -f "$SCRIPT_DIR/hyprland/do-symbolic-links.sh" ]; then
     echo "Running your symbolic links script..."
     cd hyprland && ./do-symbolic-links.sh --force && cd -
 else
