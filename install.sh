@@ -30,24 +30,6 @@ if ! command -v yay &> /dev/null; then
     cd - > /dev/null
 fi
 
-# Remove unwanted packages
-echo "Removing unwanted packages..."
-UNWANTED_PACKAGES=(
-    "dolphin"
-    "kitty"
-    "polkit-kde-agent"
-    "wofi"
-)
-
-for pkg in "${UNWANTED_PACKAGES[@]}"; do
-    if pacman -Qi "$pkg" &> /dev/null; then
-        echo "Removing $pkg..."
-        yay -R --noconfirm "$pkg" || echo "Unable to remove $pkg"
-    else
-        echo "$pkg is not installed"
-    fi
-done
-
 # Install packages
 echo "Installing packages..."
 PACKAGES=(
@@ -102,6 +84,7 @@ PACKAGES=(
     "lsd"
     "lxappearance"
     "man-db"
+    "moonlight-qt"
     "mtpfs"
     "ncdu"
     "neovim"
@@ -132,6 +115,7 @@ PACKAGES=(
     "slides"
     "smbclient"
     "starship"
+    "swaync"
     "tectonic"
     "tldr"
     "ttf-jetbrains-mono-nerd"
@@ -146,6 +130,7 @@ PACKAGES=(
     "waybar"
     "wf-recorder-gui"
     "whitesur-gtk-theme"
+    "wl-clipboard"
     "xcursor-breeze"
     "yazi"
     "zen-browser-bin"
@@ -155,6 +140,24 @@ PACKAGES=(
 )
 
 yay -S --needed --noconfirm "${PACKAGES[@]}"
+
+# Remove unwanted packages
+echo "Removing unwanted packages..."
+UNWANTED_PACKAGES=(
+    "dolphin"
+    "kitty"
+    "polkit-kde-agent"
+    "wofi"
+)
+
+for pkg in "${UNWANTED_PACKAGES[@]}"; do
+    if pacman -Qi "$pkg" &> /dev/null; then
+        echo "Removing $pkg..."
+        yay -R --noconfirm "$pkg" || echo "Unable to remove $pkg"
+    else
+        echo "$pkg is not installed"
+    fi
+done
 
 # =============================================================================
 # ANDROID SDK 
