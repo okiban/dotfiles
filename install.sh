@@ -66,7 +66,7 @@ PACKAGES=(
     "go"
     "gpu-usage-waybar"
     "graphicsmagick"
-    "grimshot-bin-sway"
+    "sway-contrib"
     "gthumb"
     "gvfs-mtp"
     "gvfs-smb"
@@ -100,7 +100,6 @@ PACKAGES=(
     "nwg-displays"
     "nwg-look"
     "openrazer-daemon"
-    "otf-apple-sf-pro"
     "otf-font-awesome"
     "pacseek"
     "pavucontrol"
@@ -140,6 +139,9 @@ PACKAGES=(
     "zoxide"
     "zsh"
 )
+
+# I don't remember why i need this font but for now, it's broken
+# "otf-apple-sf-pro"
 
 yay -S --needed --noconfirm "${PACKAGES[@]}"
 
