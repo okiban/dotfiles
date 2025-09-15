@@ -103,6 +103,8 @@ PACKAGES=(
     "otf-font-awesome"
     "pacseek"
     "pavucontrol"
+    "pipewire-alsa"
+    "pipewire-pulse"
     "proton-vpn-gtk-app"
     "python-distutils-extra"
     "python-openrazer"
