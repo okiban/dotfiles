@@ -96,6 +96,8 @@ PACKAGES=(
     "noto-fonts-cjk"
     "noto-fonts-emoji"
     "noto-fonts-extra"
+    "ntfs-3g"
+    "ntfsprogs"
     "nvtop"
     "nwg-displays"
     "nwg-look"
