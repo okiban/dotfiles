@@ -116,6 +116,7 @@ PACKAGES=(
     "rofi-wayland"
     "rust"
     "scrcpy"
+    "seahorse"
     "simple-scan"
     "slides"
     "smbclient"
