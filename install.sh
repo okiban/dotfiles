@@ -116,7 +116,6 @@ PACKAGES=(
     "rate-mirrors-bin"
     "ripgrep"
     "rofi-wayland"
-    "rust"
     "scrcpy"
     "seahorse"
     "simple-scan"
