@@ -7,6 +7,7 @@
 declare -a CONFIG_MAPPINGS=(
     ".config:$HOME/.config"
     "zsh_config:$HOME"
+    ".local/bin:$HOME/.local/bin"
 )
 
 # Global variables
