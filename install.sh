@@ -145,6 +145,7 @@ PACKAGES=(
     "yazi"
     "zen-browser-bin"
     "zenity"
+    "zip"
     "zoxide"
     "zsh"
 )
