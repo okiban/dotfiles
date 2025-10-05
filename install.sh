@@ -64,6 +64,7 @@ PACKAGES=(
     "gimp"
     "gnome-calculator"
     "gnome-calendar"
+    "gnome-keyring"
     "go"
     "gpu-usage-waybar"
     "graphicsmagick"
