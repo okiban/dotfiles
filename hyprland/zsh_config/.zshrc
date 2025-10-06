@@ -85,6 +85,10 @@ if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 
+# zoxide init
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
 
 # ─────────────────────────────────────────────
 # Deferred Loading (Background)
@@ -96,9 +100,5 @@ fi
         eval "$(register-python-argcomplete pipx)"
     fi
 
-    # zoxide init
-    if command -v zoxide &> /dev/null; then
-        eval "$(zoxide init zsh)"
-    fi
 
 } &!
