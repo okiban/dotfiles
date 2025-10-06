@@ -87,7 +87,7 @@ fi
 
 # zoxide init
 if command -v zoxide &> /dev/null; then
-    eval "$(zoxide init zsh)"
+    eval "$(zoxide init zsh --cmd cd)"
 fi
 
 # ─────────────────────────────────────────────
