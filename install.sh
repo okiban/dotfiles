@@ -89,6 +89,7 @@ PACKAGES=(
     "lxappearance"
     "man-db"
     "moonlight-qt"
+    "mpv"
     "mtpfs"
     "ncdu"
     "neovim"
