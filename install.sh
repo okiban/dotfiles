@@ -82,6 +82,7 @@ PACKAGES=(
     "jmtpfs"
     "lazygit"
     "libreoffice-still"
+    "linux-headers"
     "linux-wifi-hotspot"
     "localsend"
     "lsb-release"
