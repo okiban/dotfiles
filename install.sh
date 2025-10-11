@@ -49,7 +49,6 @@ PACKAGES=(
     "chafa"
     "cups"
     "discord"
-    "distroav"
     "dnsmasq"
     "dunst"
     "dust"
