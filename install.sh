@@ -64,6 +64,7 @@ PACKAGES=(
     "gnome-calculator"
     "gnome-calendar"
     "gnome-keyring"
+    "gnu-netcat"
     "go"
     "gpu-usage-waybar"
     "graphicsmagick"
