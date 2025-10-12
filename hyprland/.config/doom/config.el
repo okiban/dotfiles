@@ -86,3 +86,6 @@
 
 (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
+
+;; Make Ctrl-c behave like Neovim (exit insert mode)
+(define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
