@@ -4,6 +4,9 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    lazygit = {
+      configure = true,
+    },
     dashboard = {
       preset = {
         pick = function(cmd, opts)
@@ -42,6 +45,15 @@ return {
         'webm',
         'pdf',
       },
+    },
+  },
+  keys = {
+    {
+      '<leader>lg',
+      function()
+        Snacks.lazygit()
+      end,
+      desc = 'Lazygit',
     },
   },
 }

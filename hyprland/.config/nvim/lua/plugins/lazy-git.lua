@@ -2,6 +2,7 @@
 ---@type LazySpec
 return {
   'mikavilpas/tsugit.nvim',
+  enabled = false,
   keys = {
     {
       '<leader>lg',
