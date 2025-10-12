@@ -4,6 +4,12 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    indent = {
+      enabled = true,
+      animate = {
+        enabled = false,
+      },
+    },
     lazygit = {
       configure = true,
     },
