@@ -1,8 +1,9 @@
 configuration{
-    modi: "drun";
+    modes: "drun";
     show-icons: true;
     terminal: "ghostty";
     drun-display-format: "{icon} {name}";
+    drun-use-desktop-cache: true;
 }
 
 @theme "custom-theme"
