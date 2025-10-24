@@ -118,7 +118,7 @@ PACKAGES=(
     "python-pipx"
     "rate-mirrors-bin"
     "ripgrep"
-    "rofi-wayland"
+    "rofi"
     "satty"
     "scrcpy"
     "seahorse"
