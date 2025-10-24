@@ -9,5 +9,4 @@ alias wfs="hyprctl dispatch focuswindow class:com.moonlight_stream.Moonlight && 
 alias sharecam="${HOME}/.local/bin/usbip_webcam.sh"
 alias stopsharecam="${HOME}/.local/bin/usbip_unbind_webcam.sh"
 alias getcam="sudo modprobe vhci-hcd; sudo usbip attach -r 192.168.1.230 -b"
-alias claude="${HOME}/.claude/local/claude"
 alias tt="taskwarrior-tui"
