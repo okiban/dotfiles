@@ -50,7 +50,6 @@ PACKAGES=(
     "cups"
     "discord"
     "dnsmasq"
-    "dunst"
     "dust"
     "dysk"
     "emacs-wayland"
