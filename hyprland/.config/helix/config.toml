@@ -1,19 +1,83 @@
-theme = "zed_onedark"
+theme = "onedarker-red-cursor"
 
 [editor]
+# Line numbers and scrolling
 line-number = "relative"
 scrolloff = 5
+scroll-lines = 3
+
+# Mouse and visual settings
 mouse = true
 middle-click-paste = false
-scroll-lines = 3
 true-color = true
-shell = [ "zsh", "-c" ]
-rulers = [80,120]
 color-modes = true
 cursorline = true
+cursorcolumn = false
+
+# Rulers and gutters
+rulers = [120]
 gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
 
+# Shell
+shell = ["zsh", "-c"]
+
+# Timing
+idle-timeout = 250
+
+# Cursor shapes
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
 select = "block"
+
+# LSP settings
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+# File picker
+[editor.file-picker]
+hidden = false
+
+# Search
+[editor.search]
+smart-case = true
+wrap-around = true
+
+# Keybindings
+[keys.normal]
+# Window navigation (Ctrl+hjkl like Neovim)
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+
+# Buffer navigation (Shift+hl like Neovim)
+S-h = ":buffer-previous"
+S-l = ":buffer-next"
+A-w = ":buffer-close"
+
+# File picker (space space like Neovim leader leader)
+space.space = "file_picker"
+
+# Global search (Ctrl+Shift+L like Neovim live_grep)
+C-S-l = "global_search"
+
+# New file
+C-t = ":new"
+
+# Toggle comments (moved from Ctrl+c to Ctrl+q)
+C-q = "toggle_comments"
+
+# Disable Ctrl+c toggle_comments (use Ctrl+q instead)
+C-c = "no_op"
+
+[keys.insert]
+# Escape to normal mode
+C-c = "normal_mode"
+
+# Toggle comments from insert mode
+C-q = "toggle_comments"
+
+# Global search from insert mode
+C-S-l = "global_search"
