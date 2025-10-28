@@ -1,7 +1,17 @@
-theme = "onedark"
+theme = "zed_onedark"
 
 [editor]
 line-number = "relative"
+scrolloff = 5
+mouse = true
+middle-click-paste = false
+scroll-lines = 3
+true-color = true
+shell = [ "zsh", "-c" ]
+rulers = [80,120]
+color-modes = true
+cursorline = true
+gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
 
 [editor.cursor-shape]
 normal = "block"
