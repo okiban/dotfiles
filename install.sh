@@ -229,9 +229,11 @@ fi
 # Change shell
 sudo chsh -s /usr/bin/zsh
 
-# Add user to plugdev group (for OpenRazer)
-echo "Adding $USER to plugdev group..."
 sudo usermod -aG plugdev "$USER"
+
+# Add user to openrazer group (for OpenRazer)
+echo "Adding $USER to plugdev group..."
+sudo usermod -aG openrazer "$USER"
 
 # Enable services
 echo "Enabling services..."
