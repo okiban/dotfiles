@@ -26,9 +26,9 @@ idle-timeout = 250
 
 # Cursor shapes
 [editor.cursor-shape]
-normal = "bar"
-insert = "underline"
-select = "underline"
+normal = "underline"
+insert = "bar"
+select = "bar"
 
 # LSP settings
 [editor.lsp]
